@@ -12,7 +12,8 @@
 This project was developed during the `Next Level Week` workshops by Rocketseat.
 
 This app has a list of plants that user can choose for decorating your ambient.
-the user can schedule an hour for taking an alert so he can care for your plant
+The user can choose what plant better combine in your ambient, like what plant stay better in the
+kitchen, living room, restroom and etc...and also the user can schedule an hour for taking an alert so he can care for your plant
  
 
 # technologies
@@ -29,4 +30,4 @@ the user can schedule an hour for taking an alert so he can care for your plant
 - [date-fns]()
 - [react-native-svg]()
 
-Make with ❤️  by Jéssica Neves Machado
+Make with ❤️ by Jéssica Neves Machado
