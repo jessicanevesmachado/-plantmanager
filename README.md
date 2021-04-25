@@ -30,4 +30,4 @@ kitchen, living room, restroom and etc...and also the user can schedule an hour 
 - [date-fns]()
 - [react-native-svg]()
 
-Make with ❤️ by Jéssica Neves Machado
+Make with ❤️  by Jéssica Neves Machado
