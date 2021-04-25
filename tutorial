@@ -1,0 +1,144 @@
+links do curso: https://www.notion.so/Material-para-a-aula-01-16cb87eb0a9b496dab5fc8a3b95b9cb0
+https://nextlevelweek.com/episodios/reactnative/1/edicao/5
+
+INICIAR PROJETO COM EXPO
+1-expo init plantmanager
+2-cd plantmanager
+3-code . + enter
+
+START NO PROJETO
+1- expo start
+
+QUANDO DESENVOLVEMOS DE FORMA TRTADICIONAL USAMOS AS SEGUINTES CONFIGURACOES:
+
+IOS
+Linguagem: Object-C Swift 
+Build: gera uma IPA
+
+
+Android
+Linguagem: Java Kotlin
+Build: gera uma AP
+
+
+O QUE É REACT NATIVE?
+É uma forma de se desenvolver Multiplataforma, onde temos um unico code base e isso é possivel devido JSCORE
+
+PQ USAR O EXPO?
+A maior vantagem durante o desenvolvimento, é que eu nao preciso ter uma MAC pra rodar o aplicativo no iphone (debugs)
+e nao preciso ter umabiente de desenvolvimento tanto para ios quanto para Android (xcode e android)
+Com expo agente pula todas essa etapa de configuracao ded ambiente
+Quando damos o comando expo start ele abre uma pagina web com o QRCode, e com esse qrcode vc consegue debugar o codigo.
+mas pra isso vc precisa ter um expoclient instalado no celular que o kra responsavel que te ajuda a rodar o APP, por isso vc n precisa configurar seu ambiente
+
+COMO RODAR APP COM EXPO?
+ter o expo instalado no celular
+e estar na mesma rede de wifi.
+
+
+
+Quando usar ambiente tradicional?
+Quando precisamos explorar ambientes de HARDWARE
+
+CODE:
+
+ICONES
+usaremos a lib abaixo para lidar com icones
+expo install @expo/vector-icons
+https://docs.expo.io/guides/icons/
+https://oblador.github.io/react-native-vector-icons/
+
+FONTES
+expo google fontes -> iremos usar fonte jost
+https://docs.expo.io/guides/using-custom-fonts/
+expo install expo-font @expo-google-fonts/nomefont
+***intalando
+expo install expo-font @expo-google-fonts/jost
+
+** carregando
+Carregar fonte na raiz do app
+
+** enquanto nao carrega a font que tal segurar a tela de splah? para isso usaremos a lib abaixo e o codigo no app
+expo install expo-app-loading
+
+** use SafeAreaView para que os elementos não derem problema de ficar escondindo, exemplo topo no iphone
+
+** useKeyboardAvoidingView para o teclado não esconder os elementos da pagina
+coloque os elementos de text dentro de uma view para proporcionar um efeito mais suave.
+
+** react navigation para navecao entre paginas
+https://reactnavigation.org/docs/getting-started
+yarn add @react-navigation/native
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+yarn add @react-navigation/stack
+
+** user TouchableWithoutFeedback para quando cliclar em qualquer lugar ele fechar o tecladinho.
+
+** outra forma de resolver o header escondido no iphone é usar uma lib chamada
+https://github.com/ptelad/react-native-iphone-x-helper
+yarn add react-native-iphone-x-helper 
+e no heade add   marginTop:getStatusBarHeight(),
+
+** trabalhando com lista no react native pode usar o flatlist e definir se mostra horizontal ou vertical.
+  <FlatList
+                          data={[1,2,3,4,5]}
+                          horizontal
+                          renderItem={({item}) =>(
+                            <EnvironmentButton title="Cozinha" active></EnvironmentButton>
+                          )}
+                        
+                            
+                        />
+
+** simular api fake com json user esse kra ai. so funciona localhost
+https://github.com/typicode/json-server
+yarn global add json-server
+para subir um servico fake preciso denifir o ip da maquina  e a porta
+*****Como descobrir qual é o meu IP?
+clique no Menu Apple (o ícone da maçã), “Preferências do Sistema”, “Rede”;
+Clique na conexão que você está usando à esquerda, o endereço interno será exibido à direita.
+
+json-server ./src/services/server.json --host 192.168.1.12 --port 3333
+
+json-server ./src/services/server.json --host 192.168.15.4 --port 3333
+
+
+
+
+**** dica de ouro do useeffect
+  // é acionado antes toda vez que a tela é montada pra gente
+    // no useeffect ele nao permite definir como assincrono na funcao, por isso vc precisar criar a funcao  asyn dentro e chamala
+
+
+**** trabalhar com svg no expo
+expo install react-native-svg
+
+** trabalhando com animacao no carregamento das request.
+--Aqui vc consegue baixar varias animacao gratuitamente
+https://lottiefiles.com/search?q=plant&category=animations
+
+--Aqui vc consegue usar o expo pra lidar com essas animacoes
+https://docs.expo.io/versions/latest/sdk/lottie/
+instalacao --> expo install lottie-react-native
+import import LottieView from 'lottie-react-native'
+
+** o que é ansyn storage?
+É UMA API para lidar como armazenamento de dados no dispositivo do usuario.
+ele usa uma estrutura "key value"
+https://docs.expo.io/versions/latest/sdk/async-storage/
+expo install @react-native-async-storage/async-storage
+
+** usando componente de timerpicker
+https://docs.expo.io/versions/latest/sdk/date-time-picker/
+expo install @react-native-community/datetimepicker
+
+** lidando com datas em javascript
+https://date-fns.org/
+yarn add date-fns
+
+*** USANDO TAB navigation
+yarn add @react-navigation/bottom-tabs
+
+*** API de notificacao
+https://docs.expo.io/versions/latest/sdk/notifications/
+expo install expo-notifications
